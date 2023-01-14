@@ -67,7 +67,7 @@ h2{
 .caracteristicas {
     background-color: #eddebd;
     color: var(--colorPrimario);
-    transform: skewY(12deg );
+    transform: skewY(12deg);
 }
 
 .caracteristicas-contenedor {
@@ -129,6 +129,14 @@ iframe{
     height: 13rem;
 }
 
+.fa-circle-info {
+    cursor: pointer;
+}
+
+.fa-circle-info:hover {
+    color: #F6C26E;
+}
+
 .stock {
     width: max-content;
 }
@@ -144,6 +152,11 @@ iframe{
     bottom: 5%;
     right: 2%;
     cursor: pointer;
+}
+
+.precio {
+    color: #171D2D;
+    font-weight: 700;
 }
 
 /*  **********
@@ -230,7 +243,7 @@ i {
 }
 
 .img-beagle{
-    animation: subi-baja 2s alternate-reverse infinite ease-in-out;   
+    animation: subi-baja 2s alternate-reverse infinite;   
 }
 
 @keyframes subi-baja{
