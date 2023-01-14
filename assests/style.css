@@ -1,47 +1,22 @@
 :root {
     --colorPrimario:#171D2D; 
+    /* --colorPrimario: #E6DFED; */
     --blanco:#fff;
     --colorFooter: #E6DFED;
-    --colorBoton: #F3A610
-}
+    /* --colorFooter: #fddc96 */
+    /* --colorBoton: #F3A610; */
+    --colorBoton: #F6C26E;
+    /* --colorBoton: #eddebd; */
 
-header{
-    font-family: 'Holtwood One SC', serif;
-}
-
-.descripcion-index{
-    font-family: 'Poppins', sans-serif;
-}
-
-.boton{
-    background-color: var(--colorBoton);
-    padding: 1.25rem 2rem;
-    font-size: x-large;
-    font-weight: bold;
-    margin-top: 4rem;
-}
-.boton-contacto{
-    background-color: var(--colorBoton);
-    font-weight: bold;
-}
-
-.mapa-conocenos{
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-h2{
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
-.nav-principal{
-    background-color: var(--colorPrimario);
-}
-
-h1{
-    font-family: 'Holtwood One SC', serif;
+    /* 
+        **********
+        VARIANTE 1
+        **********
+    /* 
+    --colorPrimario: #E6DFED; 
+    --colorFooter: #171D2D;
+    --colorBoton: #fddc96; 
+    */
 }
 
 body {
@@ -50,6 +25,76 @@ body {
     flex-direction: column;
     color: var(--blanco);
     background-color: var(--colorPrimario);
+    font-family: 'Poppins', sans-serif;
+
+}
+
+header{
+    font-family: 'Holtwood One SC', serif;
+}
+
+.nav-principal{
+    background-color: var(--colorPrimario);
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--colorFooter);
+}
+
+h1{
+    font-family: 'Holtwood One SC', serif;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.descripcion-index{
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.img-beagle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caracteristicas {
+    background-color: #eddebd;
+    color: var(--colorPrimario);
+    transform: skewY(12deg);
+}
+
+.caracteristicas-contenedor {
+    transform: skewY(-12deg );
+    padding: 5rem 1.25rem;
+}
+
+.clientes img {
+    width: 100%;
+    object-fit: cover;
+    height: 15rem;
+    border-radius: 1rem;
+}
+
+.clientes p {
+    font-weight: 300;
+}
+
+/*  *********
+    CONTACTO
+    ******** 
+*/
+
+.mapa-conocenos{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 iframe{
@@ -58,13 +103,75 @@ iframe{
     border-radius:1.25rem;
 }
 
-
 .mapa-contenedor{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+/*  ********
+    JUGUETES
+    ******** 
+*/
+
+.juguetes {
+    border-radius: 1rem;
+    color: var(--colorPrimario);
+    border-radius: 1rem;
+    position: relative;
+}
+
+.card {
+    margin: 0;
+}
+
+.card img {
+    height: 13rem;
+}
+
+.fa-circle-info {
+    cursor: pointer;
+}
+
+.fa-circle-info:hover {
+    color: #F6C26E;
+}
+
+.stock {
+    width: max-content;
+}
+
+.cart {
+    position: fixed;
+    padding: 1rem;
+    color: var(--colorPrimario);
+    border-radius: 50%;
+    border: 2px solid var(--colorPrimario);
+    background-color: var(--colorBoton);
+    z-index: 1000;
+    bottom: 5%;
+    right: 2%;
+    cursor: pointer;
+}
+
+.precio {
+    color: #171D2D;
+    font-weight: 700;
+}
+
+/*  **********
+    OFF-CANVAS
+    **********
+*/
+
+.bg-blue {
+    background-color: var(--colorFooter);
+}
+
+/*  ******
+    FOOTER
+    ****** 
+*/
 
 footer{
     margin-top: auto;
@@ -72,14 +179,147 @@ footer{
     color: var(--colorPrimario);
 }
 
+.redes {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+i {
+    font-size: 1.5rem;
+}
+
+/* 
+    *******
+    BOTONES
+    *******
+*/
+
+.boton{
+    background-color: var(--colorBoton);
+    border: 2px solid var(--colorBoton);
+    padding: 1.25rem 2rem;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.boton:hover {
+    background-color: var(--colorPrimario);
+    border: 2px solid var(--colorBoton);
+    color: var(--colorBoton);
+}
+
+.boton-contacto{
+    background-color: var(--colorBoton);
+    border: 2px solid var(--colorBoton);
+    font-weight: bold;
+}
+
+.boton-contacto:hover{
+    background-color: var(--colorPrimario);
+    border: 2px solid var(--colorBoton);
+    color: var(--colorBoton);
+    font-weight: bold;
+}
+
+.boton-agregar-carrito {
+    background-color: var(--colorBoton);
+    border: 2px solid var(--colorBoton);
+    font-weight: bold;
+}
+
+/*  ***********
+    ANIMACIONES
+    ***********
+*/
+
+.navbar-brand {
+    animation: entrada-izquierda 1s ease-in;
+}
+
+.nav-secciones {
+    animation: entrada-derecha 1s ease-in;
+}
+
+.img-beagle{
+    animation: subi-baja 2s alternate-reverse infinite;   
+}
+
+@keyframes subi-baja{
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(15px);
+    }
+}
+
+@keyframes entrada-derecha{
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes entrada-izquierda{
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*  *************
+    MEDIA QUERIES
+    *************
+*/
 
 @media (min-width: 768px){
+
     .mapa{
         padding: 2rem 0 2rem 2rem;
     }
+
     .mapa-conocenos{
         text-align: end;
         margin-bottom: 0;
+    }
+    
+    .img-beagle {
+        position: relative;
+        align-items: center;
+        display: flex;
+        height: 540px;
+    }
+
+    .img-beagle img {
+        position: absolute;
+        left: 0;
+        height: 70%;
+    }
+
+    .caracteristicas {
+        transform: skewY(7deg);
+    }
+    
+    .caracteristicas-contenedor {
+        transform: skewY(-7deg);
+    }
+
+}
+
+@media (min-width: 1200px){
+
+    .img-beagle img {
+        position: absolute;
+        height: 100%;
     }
 
 }
