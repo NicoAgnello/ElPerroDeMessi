@@ -24,7 +24,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <div class="collapse navbar-collapse nav-secciones" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                         <li class="nav-item">
                         <a class="nav-link" href="./index.html">Inicio</a>
@@ -43,33 +43,41 @@
             </div>
         </nav>
     </header>
-    <main class="p-5">
+
+    <main class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-5 mb-5">
-                   <h1 class="text-center">Contacto</h1>
-                   <form class="contact-form mx-auto d-flex-column">
-                    <div class="mb-3">
-                    <label for="name" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese su nombre" required>
-                    </div>
-                    <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su email" required> 
-                    </div>
-                    <div class="mb-3">
-                    <label for="email" class="form-label">Tipo de mascota</label>
-                    <input type="text" class="form-control" id="tipo-mascota" name="tipomascota" placeholder="Ingrese su tipo de mascota" required> 
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Comentarios</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Ingrese un comentario" required></textarea>
-                    </div>
-                    <button type="submit" class="btn boton-contacto w-100" >Enviar</button>
+                    
+                    <h1 class="text-center">Contacto</h1>
+                    <form class="contact-form mx-auto d-flex-column">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresá tu nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingresá tu apellido" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Ingresá tu email" required> 
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Tipo de mascota</label>
+                            <input type="text" class="form-control" id="tipo-mascota" name="tipo-mascota" placeholder="Tu tipo de mascota" required> 
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Comentarios</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Contanos tu duda!" required></textarea>
+                        </div>
+                        <button type="submit" class="btn boton-contacto w-100">Enviar</button>
                 </form>
                 </div>
                 <div class="mapa-contenedor col-md-7">
-                    <h2 class="mapa-conocenos ">Veni a conocernos ;)</h2>
+                    <h2 class="mapa-conocenos ">
+                        <i class="fa-solid fa-location-pin"></i>
+                        Veni a conocernos ;)</h2>
                     <div class="mapa">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3368.1782530208397!2d-63.258258000000005!3d-32.414383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2cd2610a95cf24cc!2zMzLCsDI0JzUxLjgiUyA2M8KwMTUnMjkuNyJX!5e0!3m2!1ses!2scl!4v1673644210628!5m2!1ses!2scl"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -77,6 +85,7 @@
             </div>
         </div>
     </main>
+
     <footer class="p-4">
         <div class="container ">
             <div class="row">
