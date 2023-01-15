@@ -91,7 +91,7 @@
                 </div>
 
                 <!-- BOOTSTRAP MODAL -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -99,6 +99,54 @@
                             </div>
                             <div class="modal-body" v-if="productoDetalle">
                                 <h1>{{ productoDetalle.producto }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header fondo-detalles">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Detalles del producto</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body fondo-detalles">
+                                <div class="row flex-row">
+                                    <div class="col-12 col-lg-5 align-self-center">
+                                        <img class="card-img-top rounded-4 img-detalles" src="./assests/img/collar-perros.png" alt="collarperros">
+                                    </div>
+                                    <div class="col-12 col-lg-7 text-light">
+                                        <h5 class="text-center titulo-detalles rounded-pill">Collar de pulgas para perros</h5>
+                                        <p class="card-text text-center descripcion-detalles">Es un antiparasitario externo a base de Clorpirifos, organofosforado que actúa por tensión de vapor con acción larvicida y adulticida Clorpirifos: Ejerce su acción, inhibiendo la acetilcolinesterasa, con lo que se mantiene la acción de la acetilcolina, neurotransmisor encargado de facilitar la comunicación neuronal y neuromuscular. La acción sostenida de la acetilcolina produce en el parásito susceptible, parálisis de tipo espástico. </p>
+                                        <div class="text-center">
+                                            <ul class="lista-detalles"> 
+                                                <li class="lista-none"> 
+                                                    <ul class="d-flex justify-content-between items-detalles">
+                                                        <li><i class="fa-solid fa-cat px-2"></i>Categoria</li>
+                                                        <li>Farmacia</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="lista-none"> 
+                                                    <ul class="d-flex justify-content-between items-detalles">
+                                                        <li><i class="fa-solid fa-hippo px-2"></i>Disponibilidad</li>
+                                                        <li>1</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="lista-none"> 
+                                                    <ul class="d-flex justify-content-between items-detalles">
+                                                        <li class=""><i class="fa-solid fa-dog px-2"></i>Precio</li>
+                                                        <li>$2000</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer fondo-detalles">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn boton-carrito-detalles">Agregar al carrito</button>
                             </div>
                         </div>
                     </div>
