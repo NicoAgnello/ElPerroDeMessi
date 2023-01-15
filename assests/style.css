@@ -216,7 +216,9 @@ iframe{
 
 .boton-carrito-detalles{
     background-color: var(--colorBoton);
-
+}
+.img-detalles{
+    border: 3px solid var(--colorBoton);
 }
 
 
