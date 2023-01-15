@@ -15,11 +15,10 @@ createApp({
             .then(response => response.json())
             .then(data => {
                 this.farmacia  = data.filter(producto => producto.categoria == 'farmacia')
-                this.juguetes = data.filter(producto => producto.categoria == 'jugueteria')
+                this.juguetes  = data.filter(producto => producto.categoria == 'jugueteria')
             })
             .catch(err => console.log(err))
-            .finally(() => this.loading = false,
-            )
+            .finally(() => this.loading = false)
     }, 
     methods: {
         mostrarDetalle(producto) {

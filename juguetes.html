@@ -28,16 +28,16 @@
                     <div class="collapse navbar-collapse nav-secciones" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                             <li class="nav-item">
-                            <a class="nav-link" href="./index.html">Inicio</a>
+                                <a class="nav-link" href="./index.html">Inicio</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="./contacto.html">Contacto</a>
+                                <a class="nav-link"  href="./farmacia.html">Farmacia</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link"  href="./farmacia.html">Farmacia</a>
+                                <a class="nav-link active" aria-current="page" href="#">Juguetes</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Juguetes</a>
+                                <a class="nav-link" href="./contacto.html">Contacto</a>
                             </li>
                         </ul>
                     </div>
@@ -138,7 +138,7 @@
                                 <img :src="juguete.imagen" @click="mostrarDetalle(juguete)" class="img-fluid" :alt="juguete.producto" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <h2 class="text-center fs-6">{{ juguete.producto }}</h2>
                                 <p class="fs-5 text-center precio">${{ juguete.precio }}</p>
-                                <button class="btn boton-agregar-carrito w-50 mx-auto mb-2 d-flex rounded-pill align-items-center justify-content-center gap-2">
+                                <button @click:"agregarProducto" class="btn boton-agregar-carrito w-50 mx-auto mb-2 d-flex rounded-pill align-items-center justify-content-center gap-2">
                                     <i class="fa-solid fa-cart-shopping"></i>
                                     <span>Agregar</span>
                                 </button>
