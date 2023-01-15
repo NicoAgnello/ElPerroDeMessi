@@ -1,12 +1,15 @@
 :root {
+    --fuentePoppins: 'Poppins', sans-serif;
+    --fuenteHoltwood: 'Holtwood One SC', serif;
     --colorPrimario:#171D2D; 
     /* --colorPrimario: #E6DFED; */
     --blanco:#fff;
     --colorFooter: #E6DFED;
     /* --colorFooter: #fddc96 */
-    /* --colorBoton: #F3A610; */
+    --colorModal: #F3A610;
     --colorBoton: #F6C26E;
     /* --colorBoton: #eddebd; */
+    
 
     /* 
         **********
@@ -158,6 +161,41 @@ iframe{
     color: #171D2D;
     font-weight: 700;
 }
+
+/*  ********
+    JDETALLES
+    ******** 
+*/
+#exampleModalLabel{
+    -webkit-text-stroke: 1px black;
+    color: white;
+}
+
+.fondo-detalles{
+    background-color: #4b5778;
+    color: var(--colorPrimario);
+}
+
+.img-detalles{
+    /* width: 30vw; */
+}
+
+.descripcion-detalles{
+    font-weight: 600;
+    color: #000;
+    font-family: var(--fuentePoppins);
+}
+.titulo-detalles{
+    margin-top: 1rem;
+    font-weight: 800;
+    font-family: var(--fuentePoppins);
+    background-color: var(--colorFooter);
+    color: var(--colorPrimario);
+    display: flex;
+    justify-content: center;
+    padding: .6rem;
+}
+
 
 /*  **********
     OFF-CANVAS
