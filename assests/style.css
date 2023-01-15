@@ -309,6 +309,21 @@ body::-webkit-scrollbar {
     animation: subi-baja 2s alternate-reverse infinite;   
 }
 
+.boton, .descripcion-index, .titulo {
+    animation: entrada-abajo 1s forwards;
+    opacity: 0;
+}
+.boton-juguetes {
+    animation-delay: .3s;
+}
+.descripcion-index {
+    animation-delay: .6s;
+}
+
+.titulo {
+    animation-delay: .6s;
+}
+
 @keyframes subi-baja{
     from {
         transform: translateY(0);
@@ -336,6 +351,16 @@ body::-webkit-scrollbar {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes entrada-abajo {
+    from {
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
