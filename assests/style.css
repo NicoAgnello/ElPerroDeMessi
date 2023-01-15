@@ -176,14 +176,13 @@ iframe{
     color: var(--colorPrimario);
 }
 
-.img-detalles{
-    /* width: 30vw; */
-}
-
 .descripcion-detalles{
     font-weight: 600;
     color: #000;
     font-family: var(--fuentePoppins);
+    font-weight: bold;
+    color: var(--colorPrimario);
+    padding: .5rem;
 }
 .titulo-detalles{
     margin-top: 1rem;
@@ -193,7 +192,31 @@ iframe{
     color: var(--colorPrimario);
     display: flex;
     justify-content: center;
-    padding: .6rem;
+    padding: .3rem 0;
+}
+
+
+.items-detalles{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--colorPrimario);
+    border-radius: 1.1rem;
+    padding: .5rem;
+}
+
+
+.lista-detalles{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.boton-carrito-detalles{
+    background-color: var(--colorBoton);
+
 }
 
 
