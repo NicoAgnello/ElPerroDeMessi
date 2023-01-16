@@ -278,6 +278,11 @@ iframe{
     gap: .7rem;
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
 .boton-carrito-detalles{
     background-color: var(--colorBoton);
 }
@@ -285,13 +290,21 @@ iframe{
     border: 3px solid var(--colorBoton);
 }
 
-/*  **********
-    OFF-CANVAS
-    **********
+/*  *******
+    CARRITO
+    *******
 */
 
 .bg-blue {
     background-color: var(--colorFooter);
+}
+
+/* .disabled {
+    cursor: not-allowed;
+} */
+
+.items-carrito {
+    flex-basis: 25%;
 }
 
 /*  ******
@@ -738,9 +751,9 @@ body::-webkit-scrollbar {
 
 @media (min-width: 768px){
 
-    .img-titulo {
+    /* .img-titulo {
         width: 22rem;
-    }
+    } */
 
     .mapa{
         padding: 2rem 0 2rem 2rem;
@@ -781,9 +794,9 @@ body::-webkit-scrollbar {
 
 @media (min-width: 992px) {
 
-    .img-titulo {
+    /* .img-titulo {
         width: 35rem;
-    }
+    } */
 
     .carousel img {
         height: 340px;
@@ -797,9 +810,9 @@ body::-webkit-scrollbar {
 
 @media (min-width: 1200px){
 
-    .img-titulo {
+    /* .img-titulo {
         width: 45rem;
-    }
+    } */
 
     .img-beagle img {
         position: absolute;
