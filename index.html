@@ -61,17 +61,42 @@
             </button>
            
             <!-- BOOTSTRAP OFFCANVAS -->
-            <div class="offcanvas offcanvas-start bg-blue" data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                <!-- BOOTSTRAP OFFCANVAS -->
+                <div class="offcanvas offcanvas-top bg-blue" data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
+                    <div class="offcanvas-body">
+                        <div v-if="carrito.length > 0">
+                            <div v-for="producto in carrito" class="items-carrito container-fluid">
+                                <div class="row align-items-center">
+                                    <p class="col-4 m-0 text-center">{{ producto.producto }}</p>
+                                    <p class="col-3 m-0 text-center">Precio unitario: ${{ producto.precio}}</p>
+                                    <p class="col-3 m-0 text-center">Unidades: {{ producto.cantidadEnCarrito }}</p>
+                                    <div class="col-2 m-0 ">
+                                        <button class="btn w-50"
+                                            @click="agregarProducto(producto)"
+                                            :disabled="producto.disponibles == 0 ? true : false"
+                                        >
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                        <button class="btn w-50"
+                                            @click="quitarProducto(producto)"
+                                        >
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Total: {{ total }}</p>
+                        </div>
+                        <div v-else>
+                            <p>No agregaste productos al carrito.</p>
+                        </div>
+                    </div>
+                  
                 </div>
-            </div>
 
             <section>
                 <div class="container">

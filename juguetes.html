@@ -46,7 +46,6 @@
         </header>
 
         <main class="pb-5 productos-contenedor">
-            <!-- {{ sumarTotal }} -->
             <section>
                 <div>
                     <div id="carouselExampleAutoplaying" class="carousel slide carrusel" data-bs-ride="carousel">
@@ -90,7 +89,7 @@
                                 <div class="row align-items-center">
                                     <p class="col-4 m-0 text-center">{{ producto.producto }}</p>
                                     <p class="col-3 m-0 text-center">Precio unitario: ${{ producto.precio}}</p>
-                                    <p class="col-3 m-0 text-center">Unidades: {{ producto.cantidad }}</p>
+                                    <p class="col-3 m-0 text-center">Unidades: {{ producto.cantidadEnCarrito }}</p>
                                     <div class="col-2 m-0 ">
                                         <button class="btn w-50"
                                             @click="agregarProducto(producto)"
@@ -170,7 +169,7 @@
                     </div>
                 </div>
 
-                <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster mx-auto" v-if="loading">
+                <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster mx-auto" v-if="!juguetes">
                     <div class="wheel"></div>
                     <div class="hamster">
                         <div class="hamster__body">
@@ -198,7 +197,7 @@
                                         class="rounded-pill px-2 mb-0 text-light text-end stock" 
                                         :class="juguete.disponibles >= 5 ? 'bg-success' : 'bg-danger'"
                                     >
-                                        {{ juguete.disponibles }}u
+                                        Stock: {{ juguete.disponibles }} 
                                     </p>
                                 </div>
                                 <img :src="juguete.imagen" @click="mostrarDetalle(juguete)" class="img-fluid" :alt="juguete.producto" data-bs-toggle="modal" data-bs-target="#exampleModal">

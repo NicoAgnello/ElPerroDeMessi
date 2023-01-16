@@ -299,9 +299,9 @@ ul {
     background-color: var(--colorFooter);
 }
 
-.disabled {
+/* .disabled {
     cursor: not-allowed;
-}
+} */
 
 .items-carrito {
     flex-basis: 25%;
