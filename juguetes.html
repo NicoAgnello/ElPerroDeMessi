@@ -46,6 +46,7 @@
         </header>
 
         <main class="pb-5 productos-contenedor">
+            <!-- {{ sumarTotal }} -->
             <section>
                 <div>
                     <div id="carouselExampleAutoplaying" class="carousel slide carrusel" data-bs-ride="carousel">
@@ -78,35 +79,46 @@
                 </button>
             
                 <!-- BOOTSTRAP OFFCANVAS -->
-                <div class="offcanvas offcanvas-start bg-blue" data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas offcanvas-top bg-blue" data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div>
-                            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                        <div v-if="carrito.length > 0">
+                            <div v-for="producto in carrito" class="items-carrito container-fluid">
+                                <div class="row align-items-center">
+                                    <p class="col-4 m-0 text-center">{{ producto.producto }}</p>
+                                    <p class="col-3 m-0 text-center">Precio unitario: ${{ producto.precio}}</p>
+                                    <p class="col-3 m-0 text-center">Unidades: {{ producto.cantidad }}</p>
+                                    <div class="col-2 m-0 ">
+                                        <button class="btn w-50"
+                                            @click="agregarProducto(producto)"
+                                            :disabled="producto.disponibles == 0 ? true : false"
+                                        >
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                        <button class="btn w-50"
+                                            @click="quitarProducto(producto)"
+                                        >
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Total: {{ total }}</p>
+                        </div>
+                        <div v-else>
+                            <p>No agregaste productos al carrito.</p>
                         </div>
                     </div>
+                  
                 </div>
 
                 <!-- BOOTSTRAP MODAL -->
-                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body" v-if="productoDetalle">
-                                <h1>{{ productoDetalle.producto }}</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
+                        <div class="modal-content" v-if="productoDetalle">
                             <div class="modal-header fondo-detalles">
                                 <h1 class="modal-title fs-5" id="exampleModalLabel">Detalles del producto</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -114,29 +126,29 @@
                             <div class="modal-body fondo-detalles">
                                 <div class="row flex-row">
                                     <div class="col-12 col-lg-5 align-self-center">
-                                        <img class="card-img-top rounded-4 img-detalles" src="./assests/img/collar-perros.png" alt="collarperros">
+                                        <img class="card-img-top rounded-4 img-detalles" :src="productoDetalle.imagen" :alt="productoDetalle.producto">
                                     </div>
                                     <div class="col-12 col-lg-7 text-light">
-                                        <h5 class="text-center titulo-detalles rounded-pill">Collar de pulgas para perros</h5>
-                                        <p class="card-text text-center descripcion-detalles">Es un antiparasitario externo a base de Clorpirifos, organofosforado que actúa por tensión de vapor con acción larvicida y adulticida Clorpirifos: Ejerce su acción, inhibiendo la acetilcolinesterasa, con lo que se mantiene la acción de la acetilcolina, neurotransmisor encargado de facilitar la comunicación neuronal y neuromuscular. La acción sostenida de la acetilcolina produce en el parásito susceptible, parálisis de tipo espástico. </p>
+                                        <h5 class="text-center titulo-detalles rounded-pill">{{ productoDetalle.producto}}</h5>
+                                        <p class="card-text text-center descripcion-detalles">{{ productoDetalle.descripcion }}</p>
                                         <div class="text-center">
                                             <ul class="lista-detalles"> 
                                                 <li class="lista-none"> 
                                                     <ul class="d-flex justify-content-between items-detalles">
                                                         <li><i class="fa-solid fa-cat px-2"></i>Categoria</li>
-                                                        <li>Farmacia</li>
+                                                        <li>{{ productoDetalle.categoria }}</li>
                                                     </ul>
                                                 </li>
                                                 <li class="lista-none"> 
                                                     <ul class="d-flex justify-content-between items-detalles">
                                                         <li><i class="fa-solid fa-hippo px-2"></i>Disponibilidad</li>
-                                                        <li>1</li>
+                                                        <li>{{ productoDetalle.disponibles > 0 ? productoDetalle.disponibles : 'Sin stock' }}</li>
                                                     </ul>
                                                 </li>
                                                 <li class="lista-none"> 
                                                     <ul class="d-flex justify-content-between items-detalles">
                                                         <li class=""><i class="fa-solid fa-dog px-2"></i>Precio</li>
-                                                        <li>$2000</li>
+                                                        <li>{{ productoDetalle.precio }}</li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -146,7 +158,13 @@
                             </div>
                             <div class="modal-footer fondo-detalles">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn boton-carrito-detalles">Agregar al carrito</button>
+                                <button type="button" 
+                                        class="btn boton-carrito-detalles"
+                                        @click="agregarProducto(productoDetalle)"
+                                        :disabled="productoDetalle.disponibles == 0 ? true : false"
+                                >
+                                    {{ productoDetalle.disponibles == 0 ? 'Sin stock' : 'Agregar al carrito' }}
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -186,7 +204,11 @@
                                 <img :src="juguete.imagen" @click="mostrarDetalle(juguete)" class="img-fluid" :alt="juguete.producto" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <h2 class="text-center fs-6">{{ juguete.producto }}</h2>
                                 <p class="fs-5 text-center precio">${{ juguete.precio }}</p>
-                                <button @click:"agregarProducto" class="btn boton-agregar-carrito w-50 mx-auto mb-2 d-flex rounded-pill align-items-center justify-content-center gap-2">
+                                <button @click="agregarProducto(juguete)"
+                                        :disabled="juguete.disponibles == 0 ? true : false"
+                                        :class="juguete.disponibles == 0 ? 'disabled' : ''"
+                                        class="btn boton-agregar-carrito w-50 mx-auto mb-2 d-flex rounded-pill align-items-center justify-content-center gap-2"
+                                >
                                     <i class="fa-solid fa-cart-shopping"></i>
                                     <span>Agregar</span>
                                 </button>
@@ -218,6 +240,8 @@
     </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="sweetalert2.all.min.js"></script> -->
         <script src="./js/main.js"></script>
 </body>
 </html>
