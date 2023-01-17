@@ -181,6 +181,7 @@ createApp({
           break;
       }
     },
+
     contadorDeCarrito() {
       this.contadorCarrito = this.carrito.reduce((acc, producto) => acc + producto.cantidadEnCarrito, 0);
     },
