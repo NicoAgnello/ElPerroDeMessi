@@ -22,24 +22,30 @@
     */
 }
 
-body {
+#app {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     color: var(--blanco);
-    background-color: var(--colorPrimario);
     font-family: 'Poppins', sans-serif;
-
 }
 
 header{
     font-family: 'Holtwood One SC', serif;
+    background-color: #171D2D;
+}
+
+.bg-oscuro {
+    background-color: var(--colorPrimario);
+}
+
+.bg-claro {
+    background-color: var(--colorFooter);
 }
 
 .nav-principal{
     background-color: var(--colorPrimario);
 }
-
 
 a {
     text-decoration: none;
@@ -53,6 +59,10 @@ h1{
 h2{
     font-size: 1.5rem;
     font-weight: 400;
+}
+
+.img-titulo {
+    width: 20rem;
 }
 
 .descripcion-index{
@@ -78,6 +88,10 @@ h2{
     padding: 5rem 1.25rem;
 }
 
+.caracteristicas-contenedor div div {
+    height: max-content;
+}
+
 .clientes img {
     width: 100%;
     object-fit: cover;
@@ -94,6 +108,27 @@ h2{
     ******** 
 */
 
+.contenedor-contacto {
+    background-color: var(--colorFooter);
+    color: var(--colorPrimario);
+}
+
+.contenedor-contacto col-md-6 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-contacto {
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+}
+
 .mapa-conocenos{
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -103,7 +138,8 @@ h2{
 iframe{
     width: 100%;
     height: 320px;
-    border-radius:1.25rem;
+    border-radius: 1.25rem;
+    margin-top: -11px;
 }
 
 .mapa-contenedor{
@@ -112,12 +148,37 @@ iframe{
     justify-content: center;
 }
 
-/*  ********
-    JUGUETES
-    ******** 
+.huellas-img {
+    display: none;
+    padding: 16px 0 16px 3px;
+    height: 160px;
+    object-fit: contain;
+    transform: rotate(180deg);
+    transform: scaleY(-1);
+}
+
+/*  *******************
+    FARMACIA Y JUGUETES 
+    ******************* 
 */
 
-.juguetes {
+.productos-contenedor {
+    background-color: var(--colorFooter);
+}
+
+.carousel img {
+    height: 255px;
+    display: flex;
+    object-fit: cover;
+    object-position: center;
+}
+
+.modal-content {
+    background-color: #171D2D;
+}
+
+.juguetes,
+.farmacia {
     border-radius: 1rem;
     color: var(--colorPrimario);
     border-radius: 1rem;
@@ -128,8 +189,13 @@ iframe{
     margin: 0;
 }
 
+.card:hover {
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+}
+
 .card img {
     height: 13rem;
+    cursor: pointer;
 }
 
 .fa-circle-info {
@@ -162,10 +228,18 @@ iframe{
     font-weight: 700;
 }
 
+<<<<<<< HEAD
 /*  ********
     JDETALLES
     ******** 
 */
+=======
+/*  *****
+    MODAL
+    *****
+*/
+
+>>>>>>> 4478d7da88c79ed2eeb32d67fa0bc3f54ad6c7dd
 #exampleModalLabel{
     -webkit-text-stroke: 1px black;
     color: white;
@@ -214,6 +288,14 @@ iframe{
     gap: .7rem;
 }
 
+<<<<<<< HEAD
+=======
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+>>>>>>> 4478d7da88c79ed2eeb32d67fa0bc3f54ad6c7dd
 .boton-carrito-detalles{
     background-color: var(--colorBoton);
 }
@@ -221,14 +303,28 @@ iframe{
     border: 3px solid var(--colorBoton);
 }
 
+<<<<<<< HEAD
 
 /*  **********
     OFF-CANVAS
     **********
+=======
+/*  *******
+    CARRITO
+    *******
+>>>>>>> 4478d7da88c79ed2eeb32d67fa0bc3f54ad6c7dd
 */
 
 .bg-blue {
     background-color: var(--colorFooter);
+}
+
+/* .disabled {
+    cursor: not-allowed;
+} */
+
+.items-carrito {
+    flex-basis: 25%;
 }
 
 /*  ******
@@ -292,6 +388,31 @@ i {
     font-weight: bold;
 }
 
+.boton-agregar-carrito:hover {
+    background-color: var(--blanco);
+    border: 2px solid var(--colorBoton);
+    font-weight: bold;
+}
+
+/*  ----------
+    SCROLL BAR
+    ---------- 
+*/
+
+body::-webkit-scrollbar {
+    width: 0.5rem;               
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--colorFooter);        
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--colorBoton);    
+    border-radius: 20px;       
+    
+  }
+
 /*  ***********
     ANIMACIONES
     ***********
@@ -307,6 +428,21 @@ i {
 
 .img-beagle{
     animation: subi-baja 2s alternate-reverse infinite;   
+}
+
+.boton, .descripcion-index, .titulo {
+    animation: entrada-abajo 1s forwards;
+    opacity: 0;
+}
+.boton-juguetes {
+    animation-delay: .3s;
+}
+.descripcion-index {
+    animation-delay: .6s;
+}
+
+.titulo {
+    animation-delay: .6s;
 }
 
 @keyframes subi-baja{
@@ -339,12 +475,305 @@ i {
     }
 }
 
+@keyframes entrada-abajo {
+    from {
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 
+    *******
+    SPINNER
+    *******
+*/
+
+.wheel-and-hamster {
+    --dur: 1s;
+    position: relative;
+    width: 12em;
+    height: 12em;
+    font-size: 14px;
+}
+
+.wheel,
+.hamster,
+.hamster div,
+.spoke {
+    position: absolute;
+}
+
+.wheel,
+.spoke {
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wheel {
+    background: radial-gradient(100% 100% at center,hsla(0,0%,60%,0) 47.8%,hsl(0,0%,60%) 48%);
+    z-index: 2;
+}
+
+.hamster {
+    animation: hamster var(--dur) ease-in-out infinite;
+    top: 50%;
+    left: calc(50% - 3.5em);
+    width: 7em;
+    height: 3.75em;
+    transform: rotate(4deg) translate(-0.8em,1.85em);
+    transform-origin: 50% 0;
+    z-index: 1;
+}
+
+.hamster__head {
+    animation: hamsterHead var(--dur) ease-in-out infinite;
+    background: hsl(30,90%,55%);
+    border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+    box-shadow: 0 -0.25em 0 hsl(30,90%,80%) inset,
+            0.75em -1.55em 0 hsl(30,90%,90%) inset;
+    top: 0;
+    left: -2em;
+    width: 2.75em;
+    height: 2.5em;
+    transform-origin: 100% 50%;
+}
+
+.hamster__ear {
+    animation: hamsterEar var(--dur) ease-in-out infinite;
+    background: hsl(0,90%,85%);
+    border-radius: 50%;
+    box-shadow: -0.25em 0 hsl(30,90%,55%) inset;
+    top: -0.25em;
+    right: -0.25em;
+    width: 0.75em;
+    height: 0.75em;
+    transform-origin: 50% 75%;
+}
+
+.hamster__eye {
+    animation: hamsterEye var(--dur) linear infinite;
+    background-color: hsl(0,0%,0%);
+    border-radius: 50%;
+    top: 0.375em;
+    left: 1.25em;
+    width: 0.5em;
+    height: 0.5em;
+}
+
+.hamster__nose {
+    background: hsl(0,90%,75%);
+    border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+    top: 0.75em;
+    left: 0;
+    width: 0.2em;
+    height: 0.25em;
+}
+
+.hamster__body {
+    animation: hamsterBody var(--dur) ease-in-out infinite;
+    background: hsl(30,90%,90%);
+    border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+    box-shadow: 0.1em 0.75em 0 hsl(30,90%,55%) inset,
+            0.15em -0.5em 0 hsl(30,90%,80%) inset;
+    top: 0.25em;
+    left: 2em;
+    width: 4.5em;
+    height: 3em;
+    transform-origin: 17% 50%;
+    transform-style: preserve-3d;
+}
+
+.hamster__limb--fr,
+.hamster__limb--fl {
+    clip-path: polygon(0 0,100% 0,70% 80%,60% 100%,0% 100%,40% 80%);
+    top: 2em;
+    left: 0.5em;
+    width: 1em;
+    height: 1.5em;
+    transform-origin: 50% 0;
+}
+
+.hamster__limb--fr {
+    animation: hamsterFRLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30,90%,80%) 80%,hsl(0,90%,75%) 80%);
+    transform: rotate(15deg) translateZ(-1px);
+}
+
+.hamster__limb--fl {
+    animation: hamsterFLLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30,90%,90%) 80%,hsl(0,90%,85%) 80%);
+    transform: rotate(15deg);
+}
+
+.hamster__limb--br,
+.hamster__limb--bl {
+    border-radius: 0.75em 0.75em 0 0;
+    clip-path: polygon(0 0,100% 0,100% 30%,70% 90%,70% 100%,30% 100%,40% 90%,0% 30%);
+    top: 1em;
+    left: 2.8em;
+    width: 1.5em;
+    height: 2.5em;
+    transform-origin: 50% 30%;
+}
+
+.hamster__limb--br {
+    animation: hamsterBRLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30,90%,80%) 90%,hsl(0,90%,75%) 90%);
+    transform: rotate(-25deg) translateZ(-1px);
+}
+
+.hamster__limb--bl {
+    animation: hamsterBLLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30,90%,90%) 90%,hsl(0,90%,85%) 90%);
+    transform: rotate(-25deg);
+}
+
+.hamster__tail {
+    animation: hamsterTail var(--dur) linear infinite;
+    background: hsl(0,90%,85%);
+    border-radius: 0.25em 50% 50% 0.25em;
+    box-shadow: 0 -0.2em 0 hsl(0,90%,75%) inset;
+    top: 1.5em;
+    right: -0.5em;
+    width: 1em;
+    height: 0.5em;
+    transform: rotate(30deg) translateZ(-1px);
+    transform-origin: 0.25em 0.25em;
+}
+
+.spoke {
+    animation: spoke var(--dur) linear infinite;
+    background: radial-gradient(100% 100% at center,hsl(0,0%,60%) 4.8%,hsla(0,0%,60%,0) 5%),
+    linear-gradient(hsla(0,0%,55%,0) 46.9%,hsl(0,0%,65%) 47% 52.9%,hsla(0,0%,65%,0) 53%) 50% 50% / 99% 99% no-repeat;
+}
+
+/* Animations */
+@keyframes hamster {
+    from, to {
+        transform: rotate(4deg) translate(-0.8em,1.85em);
+    }
+
+    50% {
+        transform: rotate(0) translate(-0.8em,1.85em);
+    }
+}
+
+@keyframes hamsterHead {
+    from, 25%, 50%, 75%, to {
+        transform: rotate(0);
+    }
+
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes hamsterEye {
+    from, 90%, to {
+        transform: scaleY(1);
+    }
+
+    95% {
+        transform: scaleY(0);
+    }
+}
+
+@keyframes hamsterEar {
+        from, 25%, 50%, 75%, to {
+            transform: rotate(0);
+    }
+
+        12.5%, 37.5%, 62.5%, 87.5% {
+            transform: rotate(12deg);
+    }
+}
+
+@keyframes hamsterBody {
+    from, 25%, 50%, 75%, to {
+        transform: rotate(0);
+    }
+
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(-2deg);
+    }
+}
+
+@keyframes hamsterFRLimb {
+    from, 25%, 50%, 75%, to {
+        transform: rotate(50deg) translateZ(-1px);
+    }
+
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(-30deg) translateZ(-1px);
+    }
+}
+
+@keyframes hamsterFLLimb {
+    from, 25%, 50%, 75%, to {
+        transform: rotate(-30deg);
+    }
+
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(50deg);
+    }
+}
+
+@keyframes hamsterBRLimb {
+    from, 25%, 50%, 75%, to {
+        transform: rotate(-60deg) translateZ(-1px);
+    }
+
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(20deg) translateZ(-1px);
+    }
+}
+
+@keyframes hamsterBLLimb {
+    from, 25%, 50%, 75%, to {
+        transform: rotate(20deg);
+    }
+
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(-60deg);
+    }
+}
+
+@keyframes hamsterTail {
+    from, 25%, 50%, 75%, to {
+        transform: rotate(30deg) translateZ(-1px);
+    }
+
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(10deg) translateZ(-1px);
+    }
+}
+
+@keyframes spoke {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(-1turn);
+    }
+}
+
 /*  *************
     MEDIA QUERIES
     *************
 */
 
 @media (min-width: 768px){
+
+    /* .img-titulo {
+        width: 22rem;
+    } */
 
     .mapa{
         padding: 2rem 0 2rem 2rem;
@@ -370,15 +799,40 @@ i {
 
     .caracteristicas {
         transform: skewY(7deg);
+        background-color: #d8777c;
+        color: #fff;
     }
     
     .caracteristicas-contenedor {
         transform: skewY(-7deg);
     }
 
+    .huellas-img {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* .img-titulo {
+        width: 35rem;
+    } */
+
+    .carousel img {
+        height: 340px;
+    }
+
+    .caracteristicas-contenedor div {
+        height: 300px;
+    }
+
 }
 
 @media (min-width: 1200px){
+
+    /* .img-titulo {
+        width: 45rem;
+    } */
 
     .img-beagle img {
         position: absolute;
