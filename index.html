@@ -56,11 +56,15 @@
         </header>
         
         <main class="py-4">
+            {{contadorDeCarrito}}
             <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <p v-if="carrito.length > 0" class="contador-carrito rounded-pill ">{{contadorCarrito}}</p>
                 <i class="fa-solid fa-cart-shopping cart"></i>
             </button>
+            <!-- <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <i class="fa-solid fa-cart-shopping cart"></i>
+            </button> -->
            
-            <!-- BOOTSTRAP OFFCANVAS -->
                 <!-- BOOTSTRAP OFFCANVAS -->
                 <div class="offcanvas offcanvas-start bg-blue" data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">

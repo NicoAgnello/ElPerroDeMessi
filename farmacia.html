@@ -45,8 +45,13 @@
             </nav>
         </header>
         <main class="pb-5 productos-contenedor">
-            <!-- {{ sumarTotal }} -->
+          
             <section>
+                {{contadorDeCarrito}}
+                <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <p v-if="carrito.length > 0" class="contador-carrito rounded-pill ">{{contadorCarrito}}</p>
+                    <i class="fa-solid fa-cart-shopping cart"></i>
+                </button>
                 <div>
                     <div id="carouselExampleAutoplaying" class="carousel slide carrusel" data-bs-ride="carousel">
                         <div class="carousel-inner">

@@ -307,6 +307,19 @@ ul {
     flex-basis: 25%;
 }
 
+.contador-carrito {
+    position: fixed;
+    padding: 0.1rem 0.6rem;
+    font-family: 'Holtwood One SC', serif;
+    color: var(--colorPrimario);
+    border: 2px solid var(--colorPrimario);
+    background-color: var(--colorBoton);
+    z-index: 1001;
+    bottom: 8%;
+    right: 2%;
+    cursor: pointer;
+}
+
 /*  ******
     FOOTER
     ****** 

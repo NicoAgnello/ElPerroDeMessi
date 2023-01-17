@@ -5,6 +5,7 @@ createApp({
         return {
             carrito:         [],
             total:           0,
+            contadorCarrito: 0,
             farmacia:        undefined,
             juguetes:        undefined,
             productoDetalle: undefined,
@@ -208,6 +209,9 @@ createApp({
                     break;
             }
 
-        }
+        },
+        contadorDeCarrito() {
+            this.contadorCarrito = this.carrito.reduce((acc, producto) => acc + producto.cantidadEnCarrito, 0);
+        },
     }
 }).mount('#app')
