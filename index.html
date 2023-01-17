@@ -57,46 +57,57 @@
         
         <main class="py-4">
             {{contadorDeCarrito}}
-            <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <button class="btn cart cart-home" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                 <p v-if="carrito.length > 0" class="contador-carrito rounded-pill ">{{contadorCarrito}}</p>
-                <i class="fa-solid fa-cart-shopping cart"></i>
+                <i class="fa-solid fa-cart-shopping "></i>
             </button>
            
             <!-- BOOTSTRAP OFFCANVAS -->
-            <div class="offcanvas offcanvas-start bg-blue" data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas offcanvas-start " data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close fs-5" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <div v-if="carrito.length > 0">
-                        <div v-for="producto in carrito" class="items-carrito container-fluid">
-                            <div class="row align-items-center">
-                                <p class="col-4 m-0 text-center">{{ producto.producto }}</p>
-                                <p class="col-3 m-0 text-center">Precio unitario: ${{ producto.precio}}</p>
-                                <p class="col-3 m-0 text-center">Unidades: {{ producto.cantidadEnCarrito }}</p>
-                                <div class="col-2 m-0 ">
-                                    <button class="btn w-50"
+                        <div v-for="producto in carrito" class="items-carrito container">
+                            <div class="row d-flex contenedor-producto-carrito py-3 align-items-center">
+                                <img :src="producto.imagen" class="col-3 m-0 text-center"></img>
+                                <div class="col-8">
+                                    <p class="m-0">{{ producto.producto }}</p>
+                                    <p class="mb-3 offcanvas-categoria text-danger">{{ producto.categoria }}</p>
+                                    <p class="m-0"> ${{ producto.precio }}</p>
+                                </div>
+                                <div class="col-1 m-0 d-flex p-0 flex-column gap-1 align-items-center">
+                                    <button class="boton-carrito w-100"
                                         @click="agregarProducto(producto)"
                                         :disabled="producto.disponibles == 0 ? true : false"
                                     >
-                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-plus icono-carrito"></i>
                                     </button>
-                                    <button class="btn w-50"
+                                    <p class="m-0"> {{ producto.cantidadEnCarrito }} </p>
+                                    <button class="boton-carrito w-100"
                                         @click="quitarProducto(producto)"
                                     >
-                                        <i class="fa-solid fa-minus"></i>
+                                        <i class="fa-solid fa-minus icono-carrito"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <p>Total: {{ total }}</p>
+                        <div>
+                            <div class="d-flex justify-content-between total-compra">
+                                <p class="p-2 m-0 fw-bold">Total</p>
+                                <p class="p-2 m-0 fw-bold">${{ total }}</p>
+                            </div>
+                            <button class="btn boton-continuar-carrito w-100 py-3">Continuar </button>
+                            <button class="btn boton-vaciar-carrito w-100 py-3" @click="vaciarCarrito">Vaciar carrito </button>
+                        </div>
+                        
                     </div>
                     <div v-else>
-                        <p>No agregaste productos al carrito.</p>
+                        <p>Todavía agregaste productos al carrito!</p>
                     </div>
                 </div>
-                
             </div>
 
             <section>
@@ -156,7 +167,7 @@
                         </div>
                         <div class="col-md-6 col-lg-3 d-flex flex-column">
                             <p class="fw-bold mb-0">Pichicho</p>
-                            <a href="#https://wwww.instagram.com/pichicho" class="mt-0">https://wwww.instagram.com/pichicho</a>
+                            <a href="#https://www.instagram.com/pichicho" class="mt-0 instagram-link">https://www.instagram.com/pichicho</a>
                             <nav class="d-flex gap-3 mt-auto">
                                 <a href="https://twitter.com/pichicho-the-dog"><i class="fa-brands fa-twitter "></i></a>
                                 <a href="mailto:contact.pichicho@gmail.com"><i class="fa-solid fa-envelope "></i></a>

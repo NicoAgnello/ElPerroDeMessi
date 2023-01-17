@@ -152,25 +152,35 @@ createApp({
         modal (){ 
             if (this.validarMail()){
                 Swal.fire({
-                    //icon: "success",
                     title: `${this.nombre[0].toUpperCase() + this.nombre.slice(1).toLowerCase()}, tus datos han sido enviados!`,
                     text: `Envianos una foto de ${this.nombreMascota[0].toUpperCase() + this.nombreMascota.slice(1).toLowerCase()}, para incluirla en nuestros banners del mes en la sección de farmacia ó juguetería. Envianos un mail con asunto 'Banner del Mes', al correo que encontrarás en la parte inferior de nuestra página.`,
                     background: "#E6DFED",
                     confirmButtonColor: "#F3A610",
                     confirmButtonText: "De Acuerdo!",
                     confirmButtonAriaLabel: "De Acuerdo",
-                    imageUrl: "./assests/img/jamie-street-uNNCs5kL70Q-unsplash.jpg",
+                    imageUrl: "./assests/img/gatoNico.png",
                     imageWidth: "90%",
                     imageAlt: "Foto ejemplo mascota",
-                    
                 });
             }
-            
-            
         },
-        validarMail (){
+        validarMail() {
             return /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/.test(this.mailUsuario)
         },
+        vaciarCarrito() {
+            fetch('https://mindhub-xj03.onrender.com/api/petshop')
+            .then(response => response.json())
+            .then(data => {
+                this.juguetes = data.filter(producto => producto.categoria == 'jugueteria')
+                this.farmacia = data.filter(producto => producto.categoria == 'farmacia')
+            })
+            .catch(err => console.log(err))
+            localStorage.clear()
+            this.carrito         = []
+            this.total           = 0
+            this.contadorCarrito = 0
+
+        }
     },
     computed: {
         filtrar() {

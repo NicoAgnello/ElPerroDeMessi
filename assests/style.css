@@ -49,7 +49,8 @@ a {
     color: var(--colorFooter);
 }
 
-h1{
+h1, 
+h3 {
     font-family: 'Holtwood One SC', serif;
 }
 
@@ -136,7 +137,6 @@ iframe{
     width: 100%;
     height: 320px;
     border-radius: 1.25rem;
-    margin-top: -11px;
 }
 
 .mapa-contenedor{
@@ -220,6 +220,16 @@ iframe{
     cursor: pointer;
 }
 
+.cart:hover {
+    background-color: transparent;
+    border: 2px solid var(--colorPrimario);
+    color: var(--colorPrimario);
+}
+
+.cart-home:hover {
+    background-color: #4b5778;
+}
+
 .precio {
     color: #171D2D;
 }
@@ -231,6 +241,7 @@ iframe{
 
 #exampleModalLabel{
     -webkit-text-stroke: 1px black;
+    letter-spacing: 1px;
     color: white;
 }
 
@@ -240,19 +251,18 @@ iframe{
 }
 
 .descripcion-detalles{
-    font-weight: 600;
+    font-weight: 400;
     color: #000;
     font-family: var(--fuentePoppins);
-    font-weight: bold;
-    color: var(--colorPrimario);
+    color: hsl(0, 0%, 90%);
     padding: .5rem;
 }
 .titulo-detalles{
     margin-top: 1rem;
     font-weight: 800;
     font-family: var(--fuentePoppins);
-    background-color: var(--colorFooter);
-    color: var(--colorPrimario);
+    color: hsl(0, 0%, 90%);
+    text-transform: uppercase;
     display: flex;
     justify-content: center;
     padding: .3rem 0;
@@ -306,11 +316,6 @@ ul {
 
 }
 
-/* .offcanvas-body {
-    background-color: var(--colorPrimario);
-    color: whitesmoke;
-} */
-
 .offcanvas-categoria {
     font-weight: 700;
     font-size: 0.75rem;
@@ -343,10 +348,6 @@ ul {
     background-color: var(--colorBoton) !important;    
     border-radius: 20px !important;         
 }
-/* .disabled {
-    cursor: not-allowed;
-
-} */
 
 .offcanvas-categoria {
     font-weight: 700;
@@ -382,15 +383,15 @@ ul {
 }
 
 .contador-carrito {
-    position: fixed;
+    position: absolute;
     padding: 0.1rem 0.6rem;
     font-family: 'Holtwood One SC', serif;
     color: var(--colorPrimario);
     border: 2px solid var(--colorPrimario);
     background-color: var(--colorBoton);
     z-index: 1001;
-    bottom: 8%;
-    right: 2%;
+    bottom: 25px;
+    right: -10px;
     cursor: pointer;
 }
 
@@ -451,9 +452,9 @@ height: 3rem;
 }
 
 .boton-contacto:hover{
-    background-color: var(--colorPrimario);
-    border: 2px solid var(--colorBoton);
-    color: var(--colorBoton);
+    background-color: var(--colorFooter);
+    border: 2px solid var(--colorPrimario);
+    color: var(--colorPrimario);
     font-weight: bold;
 }
 
@@ -500,6 +501,10 @@ height: 3rem;
     background: none;
 }
 
+.boton-carrito:hover:not([disabled]) {
+    background-color: var(--colorBoton);
+}
+
 .boton-continuar-carrito {
     background-color: var(--colorBoton);
     border: 2px solid var(--colorBoton);
@@ -511,6 +516,21 @@ height: 3rem;
 .boton-continuar-carrito:hover {
     background-color: var(--blanco);
     border: 2px solid var(--colorBoton);
+}
+
+.boton-vaciar-carrito {
+    background-color: var(--blanco);
+    border-left: 2px solid #fddc96;
+    border-right: 2px solid #fddc96;
+    border-bottom: 2px solid #fddc96;
+    border-radius: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.boton-vaciar-carrito:hover {
+    background-color: #fddc96;
+    border: 2px solid #fddc96;
 }
 
 /*  ----------
@@ -551,7 +571,7 @@ body::-webkit-scrollbar {
     animation: subi-baja 2s alternate-reverse infinite;   
 }
 
-.boton, .descripcion-index, .titulo {
+.boton, .descripcion-index, .img-titulo {
     animation: entrada-abajo 1s forwards;
     opacity: 0;
 }
@@ -562,7 +582,7 @@ body::-webkit-scrollbar {
     animation-delay: .6s;
 }
 
-.titulo {
+.img-titulo {
     animation-delay: .6s;
 }
 
@@ -935,9 +955,9 @@ body::-webkit-scrollbar {
 
 @media (min-width: 992px) {
 
-    /* .img-titulo {
-        width: 35rem;
-    } */
+    .instagram-link {
+        word-break: break-all;
+    }
 
     .carousel img {
         height: 340px;
