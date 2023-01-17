@@ -79,8 +79,8 @@
 
             <section class="container">
                 {{ filtrar }}
-                <select class="form-select mt-4" aria-label="Default select example" v-model="filtro">
-                    <option selected>Filtrar productos: </option>
+                <label class="mt-4 text-dark" for="select-filtro">Filtrar productos: </label>
+                <select class="form-select mt-2" aria-label="Default select example" id="select-filtro" v-model="filtro">
                     <option value="mayor-precio">Mayor a menor precio</option>
                     <option value="menor-precio">Menor a mayor precio</option>
                     <option value="mayor-stock">Mayor a menor stock</option>
