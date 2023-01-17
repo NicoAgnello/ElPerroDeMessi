@@ -81,7 +81,9 @@
                     <option value="mayor-stock">Mayor a menor stock</option>
                     <option value="menor-stock">Menor a mayor stock</option>
                 </select>
+                {{contadorDeCarrito}}
                 <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <p v-if="carrito.length > 0" class="contador-carrito rounded-pill ">{{contadorCarrito}}</p>
                     <i class="fa-solid fa-cart-shopping cart"></i>
                 </button>
             
