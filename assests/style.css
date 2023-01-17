@@ -329,6 +329,14 @@ i {
     font-size: 1.5rem;
 }
 
+.metodosdepago{
+    display: flex;
+    justify-content: center;
+}
+.metodosdepago img{
+height: 3rem;
+}
+
 /* 
     *******
     BOTONES
