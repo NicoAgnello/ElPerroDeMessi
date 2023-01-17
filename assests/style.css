@@ -295,10 +295,54 @@ ul {
     *******
 */
 
-.bg-blue {
-    background-color: var(--colorFooter);
+.offcanvas-header {
+    background-image: url(../assests/img/fatty-corgi-1QsQRkxnU6I-unsplash.jpg);
+    background-size: cover;
+    background-position: center bottom;
+    font-family: 'Holtwood One SC', serif;
+    font-size: 5rem;
+    color: var(--colorPrimario);
+    min-height: 12.5rem;
+    align-items: flex-start;
 }
 
+/* .offcanvas-body {
+    background-color: var(--colorPrimario);
+    color: whitesmoke;
+} */
+
+.offcanvas-categoria {
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contenedor-producto-carrito {
+    border-bottom: 1px solid var(--colorFooter);
+}
+
+.icono-carrito {
+    font-size: 0.75rem;
+}
+
+.total-compra {
+    border-left: 1px solid var(--colorFooter);
+    border-right: 1px solid var(--colorFooter);
+}
+
+.offcanvas-body::-webkit-scrollbar {
+    width: 0.5rem !important;               
+}
+  
+.offcanvas-body::-webkit-scrollbar-track {
+    background: var(--colorFooter) !important;        
+}
+  
+.offcanvas-body::-webkit-scrollbar-thumb {
+    background-color: var(--colorBoton) !important;    
+    border-radius: 20px !important;         
+}
 /* .disabled {
     cursor: not-allowed;
 } */
