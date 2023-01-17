@@ -75,7 +75,7 @@ h2{
 }
 
 .caracteristicas {
-    background-color: #eddebd;
+    background-color: var(--colorFooter);
     color: var(--colorPrimario);
     transform: skewY(12deg);
 }
@@ -386,6 +386,8 @@ height: 3rem;
     SCROLL BAR
     ---------- 
 */
+
+
 
 body::-webkit-scrollbar {
     width: 0.5rem;               
@@ -787,8 +789,8 @@ body::-webkit-scrollbar {
 
     .caracteristicas {
         transform: skewY(7deg);
-        background-color: #d8777c;
-        color: #fff;
+        background-color: var(--colorFooter);
+        color: var(--colorPrimario);
     }
     
     .caracteristicas-contenedor {
