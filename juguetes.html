@@ -220,7 +220,7 @@
                                         class="rounded-pill px-2 mb-0 text-light text-end stock" 
                                         :class="juguete.disponibles >= 5 ? 'bg-success' : 'bg-danger'"
                                     >
-                                        Stock: {{ juguete.disponibles }} 
+                                        {{ juguete.disponibles > 0 ? `Stock: ${juguete.disponibles}` : 'Sin stock' }} 
                                     </p>
                                 </div>
                                 <img :src="juguete.imagen" @click="mostrarDetalle(juguete)" class="img-fluid" :alt="juguete.producto" data-bs-toggle="modal" data-bs-target="#exampleModal">
