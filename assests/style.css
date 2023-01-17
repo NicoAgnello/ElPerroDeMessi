@@ -75,7 +75,7 @@ h2{
 }
 
 .caracteristicas {
-    background-color: #eddebd;
+    background-color: var(--colorFooter);
     color: var(--colorPrimario);
     transform: skewY(12deg);
 }
@@ -329,6 +329,14 @@ i {
     font-size: 1.5rem;
 }
 
+.metodosdepago{
+    display: flex;
+    justify-content: center;
+}
+.metodosdepago img{
+height: 3rem;
+}
+
 /* 
     *******
     BOTONES
@@ -378,6 +386,8 @@ i {
     SCROLL BAR
     ---------- 
 */
+
+
 
 body::-webkit-scrollbar {
     width: 0.5rem;               
@@ -779,8 +789,8 @@ body::-webkit-scrollbar {
 
     .caracteristicas {
         transform: skewY(7deg);
-        background-color: #d8777c;
-        color: #fff;
+        background-color: var(--colorFooter);
+        color: var(--colorPrimario);
     }
     
     .caracteristicas-contenedor {
