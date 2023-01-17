@@ -77,9 +77,9 @@ h2 {
 }
 
 .caracteristicas {
-  background-color: #eddebd;
-  color: var(--colorPrimario);
-  transform: skewY(12deg);
+    background-color: var(--colorFooter);
+    color: var(--colorPrimario);
+    transform: skewY(12deg);
 }
 
 .caracteristicas-contenedor {
@@ -342,6 +342,14 @@ i {
   font-size: 1.5rem;
 }
 
+.metodosdepago{
+    display: flex;
+    justify-content: center;
+}
+.metodosdepago img{
+height: 3rem;
+}
+
 /* 
     *******
     BOTONES
@@ -391,6 +399,8 @@ i {
     SCROLL BAR
     ---------- 
 */
+
+
 
 body::-webkit-scrollbar {
   width: 0.5rem;
@@ -825,42 +835,42 @@ body::-webkit-scrollbar-thumb {
   /* .img-titulo {
         width: 22rem;
     } */
+    
+    .mapa{
+        padding: 2rem 0 2rem 2rem;
+    }
 
-  .mapa {
-    padding: 2rem 0 2rem 2rem;
-  }
+    .mapa-conocenos{
+        text-align: end;
+        margin-bottom: 0;
+    }
+    
+    .img-beagle {
+        position: relative;
+        align-items: center;
+        display: flex;
+        height: 540px;
+    }
 
-  .mapa-conocenos {
-    text-align: end;
-    margin-bottom: 0;
-  }
+    .img-beagle img {
+        position: absolute;
+        left: 0;
+        height: 70%;
+    }
 
-  .img-beagle {
-    position: relative;
-    align-items: center;
-    display: flex;
-    height: 540px;
-  }
+    .caracteristicas {
+        transform: skewY(7deg);
+        background-color: var(--colorFooter);
+        color: var(--colorPrimario);
+    }
+    
+    .caracteristicas-contenedor {
+        transform: skewY(-7deg);
+    }
 
-  .img-beagle img {
-    position: absolute;
-    left: 0;
-    height: 70%;
-  }
-
-  .caracteristicas {
-    transform: skewY(7deg);
-    background-color: #d8777c;
-    color: #fff;
-  }
-
-  .caracteristicas-contenedor {
-    transform: skewY(-7deg);
-  }
-
-  .huellas-img {
-    display: block;
-  }
+    .huellas-img {
+        display: block;
+    }
 }
 
 @media (min-width: 992px) {
