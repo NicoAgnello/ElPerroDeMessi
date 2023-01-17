@@ -8,6 +8,8 @@ createApp({
             farmacia:        undefined,
             juguetes:        undefined,
             productoDetalle: undefined,
+            filtro:          undefined,
+            tituloDoc:       document.title
         }
     }, 
     created() {
@@ -134,8 +136,50 @@ createApp({
             localStorage.setItem('carrito', JSON.stringify(this.carrito))
             localStorage.setItem('total', JSON.stringify(this.total))
         }, 
+        filtrarPrecios() {
+            console.log(this.tituloDoc)
+        },
         sumarTotal() {
             this.total = this.carrito.reduce((acc, producto) => acc + Number(producto.precio * producto.cantidadEnCarrito), 0)
+        }
+    },
+    computed: {
+        filtrar() {
+            
+            switch (this.filtro) {
+                case 'mayor-precio':
+                    if (this.tituloDoc.includes('Juguetes')) {
+                        this.juguetes.sort((a, b) => b.precio - a.precio)
+                    } else {
+                        this.farmacia.sort((a, b) => b.precio - a.precio)
+                    }
+                    break;
+                case 'menor-precio':
+                    if (this.tituloDoc.includes('Juguetes')) {
+                        this.juguetes.sort((a, b) => a.precio - b.precio)
+                    } else {
+                        this.farmacia.sort((a, b) => a.precio - b.precio)
+                    }
+                    break;
+                case 'mayor-stock':
+                    if (this.tituloDoc.includes('Juguetes')) {
+                        this.juguetes.sort((a, b) => b.disponibles - a.disponibles)
+                    } else {
+                        this.farmacia.sort((a, b) => b.disponibles - a.disponibles)
+                    }
+                    break;
+                case 'menor-stock':
+                    if (this.tituloDoc.includes('Juguetes')) {
+                        this.juguetes.sort((a, b) => a.disponibles - b.disponibles)
+                    } else {
+                        this.farmacia.sort((a, b) => a.disponibles - b.disponibles)
+                    }
+                    break;
+                default: 
+
+                    break;
+            }
+
         }
     }
 }).mount('#app')
