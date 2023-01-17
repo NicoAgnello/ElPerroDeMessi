@@ -242,6 +242,7 @@ iframe{
 
 #exampleModalLabel{
     -webkit-text-stroke: 1px black;
+    letter-spacing: 1px;
     color: white;
 }
 
@@ -315,11 +316,6 @@ ul {
     align-items: flex-start;
 }
 
-/* .offcanvas-body {
-    background-color: var(--colorPrimario);
-    color: whitesmoke;
-} */
-
 .offcanvas-categoria {
     font-weight: 700;
     font-size: 0.75rem;
@@ -352,24 +348,21 @@ ul {
     background-color: var(--colorBoton) !important;    
     border-radius: 20px !important;         
 }
-/* .disabled {
-    cursor: not-allowed;
-} */
 
 .items-carrito {
     flex-basis: 25%;
 }
 
 .contador-carrito {
-    position: fixed;
+    position: absolute;
     padding: 0.1rem 0.6rem;
     font-family: 'Holtwood One SC', serif;
     color: var(--colorPrimario);
     border: 2px solid var(--colorPrimario);
     background-color: var(--colorBoton);
     z-index: 1001;
-    bottom: 9%;
-    right: 2%;
+    bottom: 25px;
+    right: -10px;
     cursor: pointer;
 }
 
@@ -478,6 +471,21 @@ height: 3rem;
 .boton-continuar-carrito:hover {
     background-color: var(--blanco);
     border: 2px solid var(--colorBoton);
+}
+
+.boton-vaciar-carrito {
+    background-color: var(--blanco);
+    border-left: 2px solid #fddc96;
+    border-right: 2px solid #fddc96;
+    border-bottom: 2px solid #fddc96;
+    border-radius: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.boton-vaciar-carrito:hover {
+    background-color: #fddc96;
+    border: 2px solid #fddc96;
 }
 
 /*  ----------
@@ -902,9 +910,9 @@ body::-webkit-scrollbar {
 
 @media (min-width: 992px) {
 
-    /* .img-titulo {
-        width: 35rem;
-    } */
+    .instagram-link {
+        word-break: break-all;
+    }
 
     .carousel img {
         height: 340px;

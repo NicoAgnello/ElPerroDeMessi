@@ -51,7 +51,7 @@
                     <div class="row g-0 contenedor-contacto">
                         <div class="col-md-6 p-4">
                             <h1 class="text-center">Contacto</h1>
-                            <form @submit.prevent class="contact-form mx-auto d-flex-column justify-content-center">
+                            <form @submit.prevent ref="contacto" class="contact-form mx-auto d-flex-column justify-content-center">
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre</label>
                                     <input type="text" v-model="nombre" class="form-control" id="nombre" name="nombre" placeholder="Ingresá tu nombre" required>

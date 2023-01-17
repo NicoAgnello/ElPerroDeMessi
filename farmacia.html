@@ -56,7 +56,7 @@
                     <div id="carouselExampleAutoplaying" class="carousel slide carrusel" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="./assests/img/alice-JK0Q8vwNSrU-unsplash.jpg" class="d-block w-100" alt="">
+                                <img src="./assests/img/roberto-huczek-oA6zqMdnhjE-unsplash.jpg" class="d-block w-100" alt="">
                             </div>
                             <div class="carousel-item">
                                 <img src="./assests/img/r-r-medicinals-Rb_XfhsQ-g0-unsplash.jpg" class="d-block w-100" alt="">
@@ -125,6 +125,8 @@
                                     <p class="p-2 m-0 fw-bold">${{ total }}</p>
                                 </div>
                                 <button class="btn boton-continuar-carrito w-100 py-3">Continuar </button>
+                                <button class="btn boton-vaciar-carrito w-100 py-3" @click="vaciarCarrito">Vaciar carrito </button>
+
                             </div>
                             
                         </div>
@@ -149,7 +151,7 @@
                                         <img class="card-img-top rounded-4 img-detalles" :src="productoDetalle.imagen" :alt="productoDetalle.producto">
                                     </div>
                                     <div class="col-12 col-lg-7 text-light">
-                                        <h5 class="text-center titulo-detalles rounded-pill">{{ productoDetalle.producto}}</h5>
+                                        <h5 class="text-center titulo-detalles">{{ productoDetalle.producto}}</h5>
                                         <p class="card-text text-center descripcion-detalles">{{ productoDetalle.descripcion }}</p>
                                         <div class="text-center">
                                             <ul class="lista-detalles"> 
