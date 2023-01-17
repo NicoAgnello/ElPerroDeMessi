@@ -25,41 +25,6 @@
     <title>Home | ElPerroDeMessi </title>
 </head>
 <body>
-<<<<<<< HEAD
-    <header>
-        <nav class="navbar navbar-dark navbar-expand-lg nav-principal">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="./assests/img/logo-texto" alt="elperrodemessi" height="50">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse nav-secciones" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./farmacia.html">Farmacia</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./juguetes.html">Juguetes</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="./contacto.html">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    
-    <main class="py-4">
-        <section>
-            <div class="container">
-                <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-=======
     <div id="app" class="bg-oscuro">
         <header>
             <nav class="navbar navbar-dark navbar-expand-lg nav-principal">
@@ -91,32 +56,13 @@
         </header>
         
         <main class="py-4">
+            {{contadorDeCarrito}}
             <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
->>>>>>> 4478d7da88c79ed2eeb32d67fa0bc3f54ad6c7dd
+                <p v-if="carrito.length > 0" class="contador-carrito rounded-pill ">{{contadorCarrito}}</p>
                 <i class="fa-solid fa-cart-shopping cart"></i>
             </button>
            
             <!-- BOOTSTRAP OFFCANVAS -->
-<<<<<<< HEAD
-            <div class="offcanvas offcanvas-start bg-blue" data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-                    </div>
-                </div>
-              </div>
-                <div class="row">
-                    <div class="col-md-6 col-lg-7 d-flex flex-column mb-5">
-                        <img class="mb-5" src="./assests/img/elperrodemessi" alt="elperrodemessi-title">
-                        <h2 class="descripcion-index mt-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque porro in dolore quos aliquid ut.</h2>
-                        <div>
-                            <a class="btn boton w-100 my-3" href="./juguetes.html"> Premia a tu mascota!</a>
-                            <a class="btn boton w-100" href="./farmacia.html"> Cuida la salud </a>
-=======
                 <!-- BOOTSTRAP OFFCANVAS -->
                 <div class="offcanvas offcanvas-start bg-blue" data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">
@@ -149,7 +95,6 @@
                         </div>
                         <div v-else>
                             <p>No agregaste productos al carrito.</p>
->>>>>>> 4478d7da88c79ed2eeb32d67fa0bc3f54ad6c7dd
                         </div>
                     </div>
                   

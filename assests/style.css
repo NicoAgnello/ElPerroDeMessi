@@ -223,23 +223,28 @@ iframe{
     cursor: pointer;
 }
 
+.contador-carrito{
+    position: fixed;
+    padding: .1rem .6rem;
+    color: var(--colorPrimario);
+    border: 3px solid var(--colorPrimario);
+    background-color: var(--colorBoton);
+    z-index: 1001;
+    bottom: 9%;
+    right: 2%;
+    cursor: pointer;
+}
+
 .precio {
     color: #171D2D;
     font-weight: 700;
 }
 
-<<<<<<< HEAD
-/*  ********
-    JDETALLES
-    ******** 
-*/
-=======
 /*  *****
     MODAL
     *****
 */
 
->>>>>>> 4478d7da88c79ed2eeb32d67fa0bc3f54ad6c7dd
 #exampleModalLabel{
     -webkit-text-stroke: 1px black;
     color: white;
@@ -288,14 +293,11 @@ iframe{
     gap: .7rem;
 }
 
-<<<<<<< HEAD
-=======
 ul {
     padding: 0;
     margin: 0;
 }
 
->>>>>>> 4478d7da88c79ed2eeb32d67fa0bc3f54ad6c7dd
 .boton-carrito-detalles{
     background-color: var(--colorBoton);
 }
@@ -303,16 +305,9 @@ ul {
     border: 3px solid var(--colorBoton);
 }
 
-<<<<<<< HEAD
-
-/*  **********
-    OFF-CANVAS
-    **********
-=======
 /*  *******
     CARRITO
     *******
->>>>>>> 4478d7da88c79ed2eeb32d67fa0bc3f54ad6c7dd
 */
 
 .bg-blue {
