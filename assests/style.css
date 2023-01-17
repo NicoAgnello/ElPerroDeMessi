@@ -439,6 +439,34 @@ height: 3rem;
     font-weight: bold;
 }
 
+.boton-agregar-carrito {
+    background-color: var(--colorBoton);
+    border: 2px solid var(--colorBoton);
+}
+
+.boton-agregar-carrito:hover {
+    background-color: var(--blanco);
+    border: 2px solid var(--colorBoton);
+}
+
+.boton-carrito {
+    border-radius: 50%;
+    background: none;
+}
+
+.boton-continuar-carrito {
+    background-color: var(--colorBoton);
+    border: 2px solid var(--colorBoton);
+    border-radius: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.boton-continuar-carrito:hover {
+    background-color: var(--blanco);
+    border: 2px solid var(--colorBoton);
+}
+
 /*  ----------
     SCROLL BAR
     ---------- 
