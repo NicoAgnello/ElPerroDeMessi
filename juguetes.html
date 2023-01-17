@@ -48,9 +48,9 @@
         <main class="pb-5 productos-contenedor">
             <section>
                 {{contadorDeCarrito}}
-                <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <button class="btn cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <p v-if="carrito.length > 0" class="contador-carrito rounded-pill ">{{contadorCarrito}}</p>
-                    <i class="fa-solid fa-cart-shopping cart"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
                 </button>
                 <div>
                     <div id="carouselExampleAutoplaying" class="carousel slide carrusel" data-bs-ride="carousel">
@@ -80,15 +80,12 @@
             <section class="container">
                 {{ filtrar }}
                 <label class="mt-4 text-dark" for="select-filtro">Filtrar productos: </label>
-                <select class="form-select mt-2" aria-label="Default select example" id="select-filtro" v-model="filtro">
+                <select class="form-select my-2" aria-label="Default select example" id="select-filtro" v-model="filtro">
                     <option value="mayor-precio">Mayor a menor precio</option>
                     <option value="menor-precio">Menor a mayor precio</option>
                     <option value="mayor-stock">Mayor a menor stock</option>
                     <option value="menor-stock">Menor a mayor stock</option>
                 </select>
-                <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                    <i class="fa-solid fa-cart-shopping cart"></i>
-                </button>
             
                 <!-- BOOTSTRAP OFFCANVAS -->
                 <div class="offcanvas offcanvas-start " data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -151,14 +148,14 @@
                                         <img class="card-img-top rounded-4 img-detalles" :src="productoDetalle.imagen" :alt="productoDetalle.producto">
                                     </div>
                                     <div class="col-12 col-lg-7 text-light">
-                                        <h5 class="text-center titulo-detalles rounded-pill">{{ productoDetalle.producto}}</h5>
+                                        <h5 class="text-center titulo-detalles">{{ productoDetalle.producto}}</h5>
                                         <p class="card-text text-center descripcion-detalles">{{ productoDetalle.descripcion }}</p>
                                         <div class="text-center">
                                             <ul class="lista-detalles"> 
                                                 <li class="lista-none"> 
                                                     <ul class="d-flex justify-content-between items-detalles">
                                                         <li><i class="fa-solid fa-cat px-2"></i>Categoria</li>
-                                                        <li>{{ productoDetalle.categoria }}</li>
+                                                        <li>{{ productoDetalle.categoria[0].toUpperCase() + productoDetalle.categoria.slice(1) }}</li>
                                                     </ul>
                                                 </li>
                                                 <li class="lista-none"> 
@@ -237,9 +234,9 @@
                             </div>
                         </div>
                     </article>
-                </div>
-                <div class=" d-flex align-items-center justify-content-center metodosdepago">
-                    <img src="./assests/img/WhatsApp_Image_2023-01-17_at_11.56.36_AM-removebg-preview.png" alt="logo-master-mercado-visa">
+                    <div class=" d-flex align-items-center justify-content-center metodosdepago">
+                        <img src="./assests/img/WhatsApp_Image_2023-01-17_at_11.56.36_AM-removebg-preview.png" alt="logo-master-mercado-visa">
+                    </div>
                 </div>
             </section>
         </main>

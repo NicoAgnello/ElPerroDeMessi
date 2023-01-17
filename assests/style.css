@@ -220,6 +220,16 @@ iframe{
     cursor: pointer;
 }
 
+.cart:hover {
+    background-color: transparent;
+    border: 2px solid var(--colorPrimario);
+    color: var(--colorPrimario);
+}
+
+.cart-home:hover {
+    background-color: #4b5778;
+}
+
 .precio {
     color: #171D2D;
     font-weight: 700;
@@ -241,19 +251,18 @@ iframe{
 }
 
 .descripcion-detalles{
-    font-weight: 600;
+    font-weight: 400;
     color: #000;
     font-family: var(--fuentePoppins);
-    font-weight: bold;
-    color: var(--colorPrimario);
+    color: hsl(0, 0%, 90%);
     padding: .5rem;
 }
 .titulo-detalles{
     margin-top: 1rem;
     font-weight: 800;
     font-family: var(--fuentePoppins);
-    background-color: var(--colorFooter);
-    color: var(--colorPrimario);
+    color: hsl(0, 0%, 90%);
+    text-transform: uppercase;
     display: flex;
     justify-content: center;
     padding: .3rem 0;
@@ -359,7 +368,7 @@ ul {
     border: 2px solid var(--colorPrimario);
     background-color: var(--colorBoton);
     z-index: 1001;
-    bottom: 8%;
+    bottom: 9%;
     right: 2%;
     cursor: pointer;
 }
@@ -421,9 +430,9 @@ height: 3rem;
 }
 
 .boton-contacto:hover{
-    background-color: var(--colorPrimario);
-    border: 2px solid var(--colorBoton);
-    color: var(--colorBoton);
+    background-color: var(--colorFooter);
+    border: 2px solid var(--colorPrimario);
+    color: var(--colorPrimario);
     font-weight: bold;
 }
 
@@ -452,6 +461,10 @@ height: 3rem;
 .boton-carrito {
     border-radius: 50%;
     background: none;
+}
+
+.boton-carrito:hover:not([disabled]) {
+    background-color: var(--colorBoton);
 }
 
 .boton-continuar-carrito {
@@ -505,7 +518,7 @@ body::-webkit-scrollbar {
     animation: subi-baja 2s alternate-reverse infinite;   
 }
 
-.boton, .descripcion-index, .titulo {
+.boton, .descripcion-index, .img-titulo {
     animation: entrada-abajo 1s forwards;
     opacity: 0;
 }
@@ -516,7 +529,7 @@ body::-webkit-scrollbar {
     animation-delay: .6s;
 }
 
-.titulo {
+.img-titulo {
     animation-delay: .6s;
 }
 
