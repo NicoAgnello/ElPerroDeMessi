@@ -73,12 +73,20 @@
             </section>
 
             <section class="container">
+                {{ filtrar }}
+                <select class="form-select mt-4" aria-label="Default select example" v-model="filtro">
+                    <option selected>Filtrar productos: </option>
+                    <option value="mayor-precio">Mayor a menor precio</option>
+                    <option value="menor-precio">Menor a mayor precio</option>
+                    <option value="mayor-stock">Mayor a menor stock</option>
+                    <option value="menor-stock">Menor a mayor stock</option>
+                </select>
                 <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <i class="fa-solid fa-cart-shopping cart"></i>
                 </button>
             
                 <!-- BOOTSTRAP OFFCANVAS -->
-                <div class="offcanvas offcanvas-top bg-blue" data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas offcanvas-start bg-blue" data-bs-scroll="true"tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
