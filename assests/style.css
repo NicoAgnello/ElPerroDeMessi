@@ -234,6 +234,8 @@ iframe{
     color: #171D2D;
 }
 
+
+
 /*  *****
     MODAL
     *****
@@ -295,9 +297,9 @@ ul {
 .boton-carrito-detalles{
     background-color: var(--colorBoton);
 }
-.img-detalles{
+/* .img-detalles{
     border: 3px solid var(--colorBoton);
-}
+} */
 
 /*  *******
     CARRITO
@@ -909,6 +911,12 @@ body::-webkit-scrollbar {
     MEDIA QUERIES
     *************
 */
+@media (min-width:576px){
+    .pillsizemin {
+        height: 30%;
+        width: 67% !important;
+    }
+}
 
 @media (min-width: 768px){
 

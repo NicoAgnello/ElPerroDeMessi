@@ -130,7 +130,7 @@
                             
                         </div>
                         <div v-else>
-                            <p>Todavía agregaste productos al carrito!</p>
+                            <p>Todavía no agregaste productos al carrito!</p>
                         </div>
                     </div>
                 </div>
@@ -177,9 +177,9 @@
                                 </div>
                             </div>
                             <div class="modal-footer fondo-detalles">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Cerrar</button>
                                 <button type="button" 
-                                        class="btn boton-carrito-detalles"
+                                        class="btn boton-carrito-detalles rounded-pill"
                                         @click="agregarProducto(productoDetalle)"
                                         :disabled="productoDetalle.disponibles == 0 ? true : false"
                                 >
@@ -227,7 +227,7 @@
                                 <button @click="agregarProducto(juguete)"
                                         :disabled="juguete.disponibles == 0 ? true : false"
                                         :class="juguete.disponibles == 0 ? 'disabled' : ''"
-                                        class="btn boton-agregar-carrito w-50 mx-auto mb-2 d-flex rounded-pill align-items-center justify-content-center gap-2"
+                                        class="btn boton-agregar-carrito w-50 mx-auto mb-2 d-flex rounded-pill align-items-center justify-content-center gap-2 pillsizemin"
                                 >
                                     <i class="fa-solid fa-cart-shopping"></i>
                                     <span>Agregar</span>
