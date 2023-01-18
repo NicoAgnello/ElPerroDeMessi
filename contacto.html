@@ -40,6 +40,10 @@
                             </li>
                             </li>
                         </ul>
+                        <label class="switch">
+                            <input type="checkbox" @click="cambiarTema" v-model="checked">
+                            <span class="slider"></span>
+                        </label>
                     </div>
                 </div>
             </nav>
@@ -48,10 +52,11 @@
         <main class="py-5">
             <section>
                 <div class="container">
+                    
                     <div class="row g-0 contenedor-contacto">
                         <div class="col-md-6 p-4">
-                            <h1 class="text-center">Contacto</h1>
-                            <form @submit.prevent ref="contacto" class="contact-form mx-auto d-flex-column justify-content-center">
+                            <h1 class="text-center contacto-encabezado">Contacto</h1>
+                            <form @submit.prevent class="contact-form mx-auto d-flex-column justify-content-center">
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre</label>
                                     <input type="text" v-model="nombre" class="form-control" id="nombre" name="nombre" placeholder="Ingresá tu nombre" required>
@@ -85,7 +90,7 @@
                     </div>
                 </div>
                 <div class="container mt-4">
-                    <h3><i class="fa-solid fa-location-pin p-2"></i>Vení a conocernos!</h3>
+                    <h3 class="contacto-conocenos"><i class="fa-solid fa-location-pin p-2"></i>Vení a conocernos!</h3>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52534.20949588374!2d-58.42190424171712!3d-34.619631677848936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca9158e82c41%3A0xafb5fe117a2c5a52!2sParaguay%202334%2C%20C1121ABL%20CABA!5e0!3m2!1ses!2sar!4v1673985461281!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>
@@ -94,11 +99,11 @@
         <footer class="p-4">
             <div class="container ">
                 <div class="row">
-                    <nav class="redes col-12 col-md-4 text-center mb-2">
-                        <a href="https://facebook.com/"><i class="fa-brands fa-meta text-dark"></i></a>
-                        <a href="https://twitter.com/"><i class="fa-brands fa-twitter text-dark"></i></a>
-                        <a href="mailto:elperrodemessi@gmail.com"><i class="fa-solid fa-envelope text-dark"></i></a>
-                        <a href="tel:+541111111"><i class="fa-brands fa-whatsapp text-dark"></i></a>
+                    <nav class="redes col-12 col-md-4">
+                        <a href="https://facebook.com/" target="_blank" class="links-footer"><i class="fa-brands fa-meta"></i></a>
+                        <a href="https://twitter.com/" target="_blank" class="links-footer"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="mailto:elperrodemessi@gmail.com" target="_blank" class="links-footer"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="tel:+541111111" class="links-footer"><i class="fa-brands fa-whatsapp"></i></a>
                     </nav>
                     <div class=" col-12 col-md-4 text-center mb-2">
                         <small>Todos los derechos reservados - El Perro De Messi</small>

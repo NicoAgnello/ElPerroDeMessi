@@ -15,11 +15,15 @@ createApp({
             nombreMascota:   "",
             mailUsuario:     "",
             tipoMascota:     "",
-            
-
+            tema:            'claro',
+            checked:         false,
+            root:            document.querySelector(':root')
         }
     }, 
     created() {
+        this.tema    = JSON.parse(localStorage.getItem('tema'))
+        // this.checked = JSON.parse(localStorage.getItem('checked'))
+        this.setearTema()
         if (localStorage.getItem('carrito') != null) {
             this.total      = JSON.parse(localStorage.getItem('total'))
             this.juguetes   = JSON.parse(localStorage.getItem('juguetes'))
@@ -151,13 +155,16 @@ createApp({
         },
         modal (){ 
             if (this.validarMail()){
+                Swal
                 Swal.fire({
                     title: `${this.nombre[0].toUpperCase() + this.nombre.slice(1).toLowerCase()}, tus datos han sido enviados!`,
                     text: `Envianos una foto de ${this.nombreMascota[0].toUpperCase() + this.nombreMascota.slice(1).toLowerCase()}, para incluirla en nuestros banners del mes en la sección de farmacia ó juguetería. Envianos un mail con asunto 'Banner del Mes', al correo que encontrarás en la parte inferior de nuestra página.`,
-                    background: "#E6DFED",
-                    confirmButtonColor: "#F3A610",
-                    confirmButtonText: "De Acuerdo!",
-                    confirmButtonAriaLabel: "De Acuerdo",
+                    background: "var(--colorSecundario)",
+                    color: "#fff",
+                    confirmButtonColor: "var(--colorPrimario)",
+                    confirmButtonText: "OK!",
+                    confirmButtonAriaLabel: "Ok",
+                    focusConfirm: false,
                     imageUrl: "./assests/img/gatoNico.png",
                     imageWidth: "90%",
                     imageAlt: "Foto ejemplo mascota",
@@ -180,6 +187,57 @@ createApp({
             this.total           = 0
             this.contadorCarrito = 0
 
+        },
+        cambiarTema() {
+            if (this.tema == 'claro') {
+                this.root.style.setProperty('--colorPrimario', '#1B1B1B')
+                this.root.style.setProperty('--colorSecundario', '#525252')
+                this.root.style.setProperty('--colorFooter', '#343434')
+                this.root.style.setProperty('--colorBoton', '#F6C26E')
+                this.root.style.setProperty('--claro', '#000')
+                this.root.style.setProperty('--oscuro', '#fff')
+                this.root.style.setProperty('--bg-claro', '#1B1B1B')
+                this.root.style.setProperty('--shadow', '10px 10px 20px rgba(0,0,0,0.5)')
+                this.tema = 'oscuro'
+            } else if (this.tema == 'oscuro') {
+                this.root.style.setProperty('--colorPrimario', '#171D2D')
+                this.root.style.setProperty('--colorSecundario', '#4b5778')
+                this.root.style.setProperty('--colorFooter', '#E6DFED')
+                this.root.style.setProperty('--colorBoton', '#F6C26E')
+                this.root.style.setProperty('--claro', '#fff')
+                this.root.style.setProperty('--oscuro', '#000')
+                this.root.style.setProperty('--bg-claro', '#fff')
+                this.root.style.setProperty('--shadow', '10px 10px 20px rgba(0,0,0,0.2)')
+                this.tema = 'claro'
+            }
+            this.checked = !this.checked
+            localStorage.setItem('tema', JSON.stringify(this.tema))
+            localStorage.setItem('oscuro', JSON.stringify(this.checked))
+        }, 
+        setearTema() {
+            if (this.tema == 'oscuro') {
+                this.root.style.setProperty('--colorPrimario', '#1B1B1B')
+                this.root.style.setProperty('--colorSecundario', '#525252')
+                this.root.style.setProperty('--colorFooter', '#343434')
+                this.root.style.setProperty('--colorBoton', '#F6C26E')
+                this.root.style.setProperty('--claro', '#000')
+                this.root.style.setProperty('--oscuro', '#fff')
+                this.root.style.setProperty('--bg-claro', '#1B1B1B')
+                this.root.style.setProperty('--shadow', '10px 10px 20px rgba(0,0,0,0.5)')
+                this.tema = 'oscuro'
+            } else {
+                this.root.style.setProperty('--colorPrimario', '#171D2D')
+                this.root.style.setProperty('--colorSecundario', '#4b5778')
+                this.root.style.setProperty('--colorFooter', '#E6DFED')
+                this.root.style.setProperty('--colorBoton', '#F6C26E')
+                this.root.style.setProperty('--claro', '#fff')
+                this.root.style.setProperty('--oscuro', '#000')
+                this.root.style.setProperty('--bg-claro', '#fff')
+                this.root.style.setProperty('--shadow', '10px 10px 20px rgba(0,0,0,0.2)')
+                this.tema = 'claro'    
+            }
+            localStorage.setItem('tema', JSON.stringify(this.tema))
+            localStorage.setItem('oscuro', JSON.stringify(this.checked))
         }
     },
     computed: {
@@ -218,10 +276,9 @@ createApp({
 
                     break;
             }
-
         },
         contadorDeCarrito() {
             this.contadorCarrito = this.carrito.reduce((acc, producto) => acc + producto.cantidadEnCarrito, 0);
-        },
+        }
     }
 }).mount('#app')
